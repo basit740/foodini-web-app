@@ -1,16 +1,13 @@
 import React from 'react';
-import classes from '../styles/navbar.module.css';
-import logo from '../assets/logo.png';
+import classes from '../../styles/navbar.module.css';
+import logo from '../../assets/logo.png';
+import Hamburger from './Hamburger';
 const Navbar = () => {
 	return (
 		<nav className={`${classes.navbar} container-fluid`}>
 			<div className={`${classes['navbar-container']} container`}>
 				<div className={`${classes['menu-and-logo']}`}>
-					<div className={`${classes.hamburger}`}>
-						<div className={`${classes.bar}`}></div>
-						<div className={`${classes.bar}`}></div>
-						<div className={`${classes.bar}`}></div>
-					</div>
+					<Hamburger />
 					<div className={`${classes['logo']}`}>
 						<img src={logo} alt='brand logo' />
 					</div>

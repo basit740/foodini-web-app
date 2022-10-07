@@ -13,6 +13,7 @@
       */
 .navbar {
 	background-color: #f4f6f8;
+	box-shadow: 0px 3px 10px #dee2e6;
 }
 .navbar-container {
 	display: flex;
@@ -51,7 +52,7 @@
 .btn-signin,
 .btn-register {
 	padding: 10px 20px;
-	font-weight: 700;
+	font-weight: bold;
 	font-size: 20px;
 }
 
@@ -59,6 +60,7 @@
 	color: #465c72;
 	background-color: #fff;
 	border: 1px solid #adb5bd;
+	border: 1px solid #ced4da;
 }
 .btn-signin:hover {
 	background-color: rgba(255, 255, 255, 0.6);

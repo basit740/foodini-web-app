@@ -1,0 +1,81 @@
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+/* 
+      MAIN COLOR: #26d07c
+      GREY COLOR: #343a40
+      TEXT COLOR #465c72
+      NAVBAR COLOR #f4f6f8
+      BORDER COLOR #adb5bd
+      HALF-MUTED COLOR #495057;
+      */
+
+.dietarypf-content {
+}
+.dietarypf-heading {
+	text-align: center;
+	width: 550px;
+	margin: 0 auto;
+	margin-top: 48px;
+	margin-bottom: 24px;
+}
+.dietarypf-heading p {
+	font-size: 16px;
+	color: #495057e3;
+}
+
+.diatarypf-box {
+	border: 1px solid #adb5bd;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.item {
+}
+.item ul {
+	list-style: none;
+}
+
+.item-heading {
+	padding: 48px 64px;
+	display: flex;
+	justify-content: space-between;
+
+	padding-bottom: 64px;
+}
+.item-number {
+	width: 32px;
+	height: 32px;
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.item-heading-content p:last-child {
+	font-size: 14px;
+	margin-top: 8px;
+	color: #495057;
+}
+
+.item-heading-tags {
+	display: flex;
+	gap: 16px;
+}
+
+.tag {
+	padding: 12px;
+	border-radius: 15px;
+	background-color: #f4f6f8;
+	align-self: flex-start;
+	width: 132px;
+}
+
+.item-body {
+}
