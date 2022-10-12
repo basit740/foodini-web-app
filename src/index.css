@@ -33,11 +33,18 @@
 }
 
 /* UTILITY CLASSES */
+/* .d-none {
+	display: none;
+} */
+
 .d-flex {
 	display: flex;
 }
 .j-center {
 	justify-content: center;
+}
+.j-sb {
+	justify-content: space-between;
 }
 .ali-center {
 	align-items: center;
@@ -133,4 +140,8 @@ code {
 
 h1 {
 	color: #000;
+}
+
+.d-none {
+	display: none;
 }
