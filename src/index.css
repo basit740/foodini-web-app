@@ -65,6 +65,9 @@
 .w-128 {
 	width: 128px;
 }
+.w-158 {
+	width: 158px;
+}
 .w-264 {
 	width: 264px;
 }
@@ -78,6 +81,14 @@
 	width: 520px;
 }
 
+/* HEIGHT */
+.h-0 {
+	height: 0px;
+}
+.h-2 {
+	margin-top: 0px;
+	height: 0px;
+}
 /* CSS imported from BOOTSTRAP */
 
 .container {
@@ -144,4 +155,7 @@ h1 {
 
 .d-none {
 	display: none;
+}
+.light {
+	color: white;
 }
