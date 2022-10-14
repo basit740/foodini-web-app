@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Venue = () => {
 	const navigate = useNavigate();
@@ -12,6 +12,7 @@ const Venue = () => {
 	return (
 		<div>
 			<h1>This is venue</h1>
+			<Outlet />
 		</div>
 	);
 };

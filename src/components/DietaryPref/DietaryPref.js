@@ -10,11 +10,15 @@ import { algsData } from '../../data/alg';
 import { dietPrefs } from '../../data/dietPrefs';
 import { foodGroups } from '../../data/foodGroups';
 
+import { useNavigate } from 'react-router-dom';
+
 const DietaryPref = () => {
 	const [step, setStep] = useState(1);
 	const [algs, setAlgs] = useState(algsData);
 	const [dtpf, setDtpf] = useState(dietPrefs);
 	const [fdGroups, setFdGroups] = useState(foodGroups);
+
+	const navigate = useNavigate();
 
 	const dtpfTagClickHandler = (info) => {
 		const prevDtpf = [...dtpf];
@@ -113,7 +117,8 @@ const DietaryPref = () => {
 		setStep(1);
 	};
 	const submitHandler = () => {
-		alert('data submitting');
+		localStorage.setItem('dtpf', 'done');
+		navigate('/venue');
 	};
 
 	return (
