@@ -1,0 +1,56 @@
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+/* 
+      MAIN COLOR: #26d07c
+      GREY COLOR: #343a40
+      TEXT COLOR #465c72
+      NAVBAR COLOR #f4f6f8
+      BORDER COLOR #adb5bd
+      HALF-MUTED COLOR #495057;
+      */
+
+.menu_card {
+	width: 300px;
+	height: 130px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	/* align-items: center; */
+	box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.208);
+	border-radius: 10px;
+	/* background-color: green; */
+	background-color: #f4f6f8;
+}
+
+.menu_card img {
+	display: block;
+}
+.heading {
+	display: flex;
+	justify-content: space-between;
+}
+.heading svg {
+	fill: #26d07c;
+	width: 17px;
+}
+.heading h6 {
+	font-size: 14px;
+	font-weight: 500;
+}
+.menu_info {
+	padding: 10px;
+	/* padding: 25px; */
+}
+
+.description {
+	font-size: 10px;
+	margin-bottom: 15px;
+	margin-top: 10px;
+}
+.price {
+	font-weight: bold;
+}

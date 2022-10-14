@@ -11,7 +11,6 @@ const Venue = () => {
 	});
 	return (
 		<div>
-			<h1>This is venue</h1>
 			<Outlet />
 		</div>
 	);
