@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from '../../../styles/tag.module.css';
 const Tag = (props) => {
-	const { id, title, value } = props.data;
+	const { id, title, value, selected } = props.data;
 
-	const [active, setActive] = useState(false);
+	// const [active, setActive] = useState(selected);
 	let firstPart = '';
 	let secondPart = '';
 	if (title.length > 15) {
@@ -21,24 +21,26 @@ const Tag = (props) => {
 	}
 
 	const activeHandler = () => {
-		if (active) {
-			setActive(false);
-			props.onSelect({
-				active: false,
-				value,
+		if (selected) {
+			// setActive(false);
+			props.onClick({
+				selected: false,
+				id,
+				title,
 			});
 		} else {
-			setActive(true);
-			props.onSelect({
-				active: true,
-				value,
+			// setActive(true);
+			props.onClick({
+				selected: true,
+				id,
+				title,
 			});
 		}
 	};
 	return (
 		<div
 			id={id}
-			className={`${classes.tag} ${active ? classes.active : ''} ${
+			className={`${classes.tag} ${selected ? classes.active : ''} ${
 				title.length > 15 ? classes.large : ''
 			}`}
 			onClick={activeHandler}

@@ -1,12 +1,18 @@
 import DietaryPref from './components/DietaryPref/DietaryPref';
-import Navbar from './components/Navar/Navbar';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import Venue from './pages/Venue/Venue';
 function App() {
 	return (
-		<>
-			<Navbar />
-			<DietaryPref />
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<Layout />}>
+					<Route path='venue' element={<Venue />} />
+					<Route path='dietary_preferences' element={<DietaryPref />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

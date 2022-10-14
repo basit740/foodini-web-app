@@ -1,0 +1,66 @@
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+/* 
+      MAIN COLOR: #26d07c
+			SECONDARY COLOR: #43b772
+      GREY COLOR: #343a40
+      TEXT COLOR #465c72
+      NAVBAR COLOR #f4f6f8
+      BORDER COLOR #adb5bd
+      HALF-MUTED COLOR #495057;
+      */
+
+.review {
+	padding: 100px 80px;
+	padding-right: 32px;
+	padding-top: 80px;
+}
+
+.review_heading {
+	margin-bottom: 48px;
+}
+.review_heading > p {
+	margin-top: 12px;
+}
+
+.review_body {
+}
+.review_body > div {
+	margin-top: 16px;
+}
+
+.dtpf_section {
+	border-bottom: 1px solid gainsboro;
+	padding-bottom: 32px;
+}
+
+.df_excluded {
+	background-color: #43b772;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 14px;
+	height: 45px;
+	text-align: center;
+}
+.dtpf_content {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.alg_section {
+	padding-top: 32px;
+	padding-bottom: 32px;
+	/* border-bottom: 1px solid gainsboro; */
+}
+.algs_content {
+	display: grid;
+	width: 730px;
+	grid-template-columns: auto auto auto auto auto;
+	gap: 8px;
+}

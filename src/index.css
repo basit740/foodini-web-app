@@ -32,6 +32,19 @@
 	background-color: rgba(38, 208, 124, 0.8);
 }
 
+.number {
+	width: 32px;
+	height: 32px;
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+}
+
 /* UTILITY CLASSES */
 /* .d-none {
 	display: none;
@@ -79,6 +92,9 @@
 }
 .w-520 {
 	width: 520px;
+}
+.w-700 {
+	width: 750px;
 }
 
 /* HEIGHT */

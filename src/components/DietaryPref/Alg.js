@@ -1,27 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classes from '../../styles/alg.module.css';
-import { algsData } from '../../data/alg';
+// import { algsData } from '../../data/alg';
 import Tag from '../utils/Tag/Tag';
 
-const Alg = () => {
-	const [algs, setAlgs] = useState(algsData);
+const Alg = ({ algs, onClick }) => {
+	const [localAlgs, setLocalAlgs] = useState(algs);
 
 	const inputRef = useRef();
 	const algFilter = (e) => {
 		debugger;
 		if (e.target.value === '') {
-			setAlgs((prev) => {
-				return [...algsData];
+			setLocalAlgs((prev) => {
+				return [...algs];
 			});
-			return;
 		}
-		const filtered = algs.filter((alg) => {
+		const filtered = localAlgs.filter((alg) => {
 			if (alg.title.toUpperCase().includes(e.target.value.toUpperCase())) {
 				return alg;
 			}
 			return null;
 		});
-		setAlgs((prev) => {
+		setLocalAlgs((prev) => {
 			return [...filtered];
 		});
 	};
@@ -67,7 +66,7 @@ const Alg = () => {
 
 				<div className={classes.alg_tags}>
 					{algs.map((alg) => {
-						return <Tag data={alg} />;
+						return <Tag data={alg} onClick={onClick} />;
 					})}
 				</div>
 			</div>

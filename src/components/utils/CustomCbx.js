@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import styles from '../../styles/customcbx.module.css';
-const CustomCbx = ({ title, id, onSwitch }) => {
-	const [active, setActive] = useState(false);
+const CustomCbx = ({ title, id, onSwitch, excluded }) => {
+	const [active, setActive] = useState(excluded);
 
 	const switchHandler = () => {
 		setActive(!active);
 
 		if (active) {
-			onSwitch(false);
+			onSwitch({
+				id,
+				excluded: false,
+			});
 		} else {
-			onSwitch(true);
+			onSwitch({
+				id,
+				excluded: true,
+			});
 		}
 	};
 	return (

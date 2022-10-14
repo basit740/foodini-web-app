@@ -4,35 +4,118 @@ import styles from '../../styles/dietarypref.module.css';
 import Alg from './Alg';
 import CustomCbx from '../utils/CustomCbx';
 import Tag from '../utils/Tag/Tag';
+import Review from './Review';
 
-const dietPrefs = [
-	{
-		id: '1',
-		title: 'Vegetarian (VG)',
-		value: 'vegetarian',
-	},
-	{
-		id: '2',
-		title: 'Vegan (V)',
-		value: 'vegan',
-	},
-	{
-		id: '3',
-		title: 'Pescatrian (P)',
-		value: 'pescatrian',
-	},
-	{
-		id: '4',
-		title: 'None',
-		value: 'none',
-	},
-];
+import { algsData } from '../../data/alg';
+import { dietPrefs } from '../../data/dietPrefs';
+import { foodGroups } from '../../data/foodGroups';
+
 const DietaryPref = () => {
 	const [step, setStep] = useState(1);
+	const [algs, setAlgs] = useState(algsData);
+	const [dtpf, setDtpf] = useState(dietPrefs);
+	const [fdGroups, setFdGroups] = useState(foodGroups);
+
+	const dtpfTagClickHandler = (info) => {
+		const prevDtpf = [...dtpf];
+
+		let none = false;
+		if (info.title === 'None' && info.selected === true) {
+			none = true;
+		}
+
+		if (none) {
+			prevDtpf.map((alg) => {
+				if (alg.title === 'None') {
+					alg.selected = true;
+				} else {
+					alg.selected = false;
+				}
+				return alg;
+			});
+		} else {
+			prevDtpf.map((alg) => {
+				if (info.id === alg.id) {
+					alg.selected = info.selected;
+				}
+				if (alg.title === 'None') {
+					alg.selected = false;
+				}
+
+				return alg;
+			});
+		}
+
+		setDtpf((prev) => {
+			return [...prevDtpf];
+		});
+	};
+
+	const algsTagClickHandler = (info) => {
+		const prevAlgs = [...algs];
+
+		let none = false;
+		if (info.title === 'None' && info.selected === true) {
+			none = true;
+		}
+
+		if (none) {
+			prevAlgs.map((alg) => {
+				if (alg.title === 'None') {
+					alg.selected = true;
+				} else {
+					alg.selected = false;
+				}
+				return alg;
+			});
+		} else {
+			prevAlgs.map((alg) => {
+				if (info.id === alg.id) {
+					alg.selected = info.selected;
+				}
+				if (alg.title === 'None') {
+					alg.selected = false;
+				}
+
+				return alg;
+			});
+		}
+
+		setAlgs((prev) => {
+			return [...prevAlgs];
+		});
+	};
+	// Food Group Handlers
+
+	const foodGroupSwitcher = (info) => {
+		const prevFoodGroups = [...fdGroups];
+		prevFoodGroups.map((item) => {
+			if (item.id === info.id) {
+				item.excluded = info.excluded;
+			}
+			return item;
+		});
+
+		setFdGroups((prev) => {
+			return [...prevFoodGroups];
+		});
+	};
 
 	const nextStepHandler = (e) => {
+		if (step === 2) {
+			submitHandler();
+			return;
+		}
+
 		setStep(2);
 	};
+	const prevStepHandler = (e) => {
+		setStep(1);
+	};
+	const submitHandler = () => {
+		alert('data submitting');
+	};
+
 	return (
 		<div className={`container`}>
 			<div className={`${styles['dietarypf-content']}`}>
@@ -48,6 +131,25 @@ const DietaryPref = () => {
 				</div>
 
 				<div className={`${styles['diatarypf-box']}`}>
+					{step === 2 && (
+						<button className={styles.back_btn} onClick={prevStepHandler}>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								fill='none'
+								viewBox='0 0 24 24'
+								stroke-width='1.5'
+								class='w-6 h-6'
+							>
+								<path
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									d='M15.75 19.5L8.25 12l7.5-7.5'
+								/>
+							</svg>
+							<span>Back</span>
+						</button>
+					)}
+
 					{step === 1 && (
 						<>
 							<div className={`${styles['item']}`}>
@@ -65,8 +167,8 @@ const DietaryPref = () => {
 									</div>
 
 									<ul className={styles['item-heading-tags']}>
-										{dietPrefs.map((dtp) => {
-											return <Tag data={dtp} />;
+										{dtpf.map((dtp) => {
+											return <Tag data={dtp} onClick={dtpfTagClickHandler} />;
 										})}
 									</ul>
 								</div>
@@ -163,6 +265,7 @@ const DietaryPref = () => {
 												</div>
 												<p>FODMAP Diet</p>
 											</div>
+											{/* End of the code with no real EFFECT */}
 										</div>
 									</div>
 
@@ -191,54 +294,68 @@ const DietaryPref = () => {
 
 										<div className={`${styles['fodmap-items-grid']}`}>
 											<div className={`${styles['fodmap-items-one']}`}>
-												<CustomCbx title='Fructose' id='1' />
-												<CustomCbx title='Lactose' id='2' />
-												<CustomCbx title='Mannitol' id='3' />
+												{fdGroups.map((fdg, index) => {
+													if (index < 3) {
+														return (
+															<CustomCbx
+																title={fdg.title}
+																id={fdg.id}
+																excluded={fdg.excluded}
+																onSwitch={foodGroupSwitcher}
+															/>
+														);
+													} else {
+														return null;
+													}
+												})}
 											</div>
 
 											<div className={`${styles['fodmap-items-two']}`}>
-												<CustomCbx title='Sorbitol' id='4' />
-												<CustomCbx title='GOS' id='5' />
-												<CustomCbx title='Fructan' id='6' />
+												{fdGroups.map((fdg, index) => {
+													if (index > 2) {
+														return (
+															<CustomCbx
+																title={fdg.title}
+																id={fdg.id}
+																excluded={fdg.excluded}
+																onSwitch={foodGroupSwitcher}
+															/>
+														);
+													} else {
+														return null;
+													}
+												})}
 											</div>
-
-											{/* <div className={`${styles['fodmap-items-one']} d-none`}>
-										<CustomCbx title='Fructose' id='1' />
-										<CustomCbx title='Lactose' id='2' />
-										<CustomCbx title='Mannitol' id='3' />
-									</div>
-									<div className={`${styles['fodmap-items-two']} d-none`}>
-										<CustomCbx title='Sorbitol' id='4' />
-										<CustomCbx title='GOS' id='5' />
-										<CustomCbx title='Fructan' id='6' />
-									</div> */}
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<Alg />
+							<Alg algs={algs} onClick={algsTagClickHandler} />
 						</>
 					)}
 					{/* Area for Next button */}
 
+					{step === 2 && <Review algs={algs} fdGroups={fdGroups} dtpf={dtpf} />}
 					<div className={styles.next_button_container}>
 						<button onClick={nextStepHandler}>
-							<span>Next</span>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke-width='1.5'
-								stroke='currentColor'
-								class='w-6 h-6'
-							>
-								<path
-									stroke-linecap='round'
-									stroke-linejoin='round'
-									d='M8.25 4.5l7.5 7.5-7.5 7.5'
-								/>
-							</svg>
+							<span>{step === 1 ? 'Next' : 'Save'}</span>
+							{step === 1 && (
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									fill='none'
+									viewBox='0 0 24 24'
+									stroke-width='1.5'
+									stroke='currentColor'
+									class='w-6 h-6'
+								>
+									<path
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										d='M8.25 4.5l7.5 7.5-7.5 7.5'
+									/>
+								</svg>
+							)}
 						</button>
 					</div>
 				</div>
