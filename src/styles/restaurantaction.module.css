@@ -1,2 +1,4 @@
-.restaurant.action {
+.restaurant_action {
+	text-align: center;
+	cursor: pointer;
 }

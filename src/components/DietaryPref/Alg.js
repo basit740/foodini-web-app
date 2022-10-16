@@ -8,7 +8,6 @@ const Alg = ({ algs, onClick }) => {
 
 	const inputRef = useRef();
 	const algFilter = (e) => {
-		debugger;
 		if (e.target.value === '') {
 			setLocalAlgs((prev) => {
 				return [...algs];
@@ -33,7 +32,7 @@ const Alg = ({ algs, onClick }) => {
 		<div className={`${classes.alg}`}>
 			<div className={classes.alg_heading}>
 				<div className='d-flex ali-center gap-32'>
-					<p className={classes.number}>2</p>
+					<p className='number'>2</p>
 					<h3>Select Allergies</h3>
 				</div>
 				<p className='w-264'>

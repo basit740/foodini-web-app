@@ -118,7 +118,7 @@ const DietaryPref = () => {
 	};
 	const submitHandler = () => {
 		localStorage.setItem('dtpf', 'done');
-		navigate('/venue');
+		navigate('/venue/23423');
 	};
 
 	return (
@@ -127,7 +127,7 @@ const DietaryPref = () => {
 				<div className={`${styles['dietarypf-heading']}`}>
 					<h2>Diatary Preferences</h2>
 					{step === 1 && (
-						<p>
+						<p className={styles.conditional_paragraph}>
 							Tell us your ditary preferences so we can show you the restaurants
 							that best match your needs! Foodini automatically filters your
 							restaurant matches based off your dietary requirements
@@ -143,7 +143,7 @@ const DietaryPref = () => {
 								fill='none'
 								viewBox='0 0 24 24'
 								stroke-width='1.5'
-								class='w-6 h-6'
+								className={styles.icon_backward}
 							>
 								<path
 									stroke-linecap='round'
@@ -161,7 +161,7 @@ const DietaryPref = () => {
 								<div className={`${styles['item-heading']}`}>
 									<div className={`${styles['item-heading-content']}`}>
 										<div className='d-flex ali-center gap-32'>
-											<p className={`${styles['item-number']}`}>
+											<p className='number'>
 												<span>1</span>
 											</p>
 											<h3>Select Dietary Preferences</h3>
@@ -182,7 +182,7 @@ const DietaryPref = () => {
 									<div className={`${styles['first-row']} d-flex`}>
 										<div className={`${styles['item-body-heading']}`}>
 											<h4>Select FODMAP Preferences</h4>
-											<p className='w-264'>
+											<p className={`${styles.body_brief} w-264`}>
 												Brief description of how the FODMAP filters work
 											</p>
 										</div>
@@ -206,7 +206,7 @@ const DietaryPref = () => {
 														/>
 													</svg>
 												</div>
-												<p>FODMAP Diet</p>
+												<p className={styles.fodmap_title}>FODMAP Diet</p>
 											</div>
 
 											{/* The code with no real EFFECT */}
@@ -343,7 +343,7 @@ const DietaryPref = () => {
 
 					{step === 2 && <Review algs={algs} fdGroups={fdGroups} dtpf={dtpf} />}
 					<div className={styles.next_button_container}>
-						<button onClick={nextStepHandler}>
+						<button onClick={nextStepHandler} className={styles.next_btn}>
 							<span>{step === 1 ? 'Next' : 'Save'}</span>
 							{step === 1 && (
 								<svg
@@ -352,7 +352,7 @@ const DietaryPref = () => {
 									viewBox='0 0 24 24'
 									stroke-width='1.5'
 									stroke='currentColor'
-									class='w-6 h-6'
+									className={styles.icon_forward}
 								>
 									<path
 										stroke-linecap='round'

@@ -118,10 +118,10 @@ const Menu = () => {
 			</div>
 
 			<div className='container'>
-				<div className={classes.matches}>
+				<div className={`${classes.matches} ml_5 mb_10`}>
 					<h4>Matches</h4>
-					<p>Breakfast</p>
-					<div className={classes.menu}>
+					<p className='ml_5 mb_10'>Breakfast</p>
+					<div className={`${classes.menu} ml_5 mb_10`}>
 						<MenuCard />
 						<MenuCard />
 						<MenuCard />
@@ -129,10 +129,10 @@ const Menu = () => {
 					</div>
 				</div>
 
-				<div className={classes.with_changes}>
+				<div className={`${classes.with_changes} ml_5 mb_10`}>
 					<h4>Matches</h4>
-					<p>Entrees</p>
-					<div className={classes.menu}>
+					<p className='ml_5 mb_10'>Entrees</p>
+					<div className={`${classes.menu} ml_5 mb_10`}>
 						<MenuCard />
 						<MenuCard />
 						<MenuCard />
@@ -144,9 +144,9 @@ const Menu = () => {
 					</div>
 				</div>
 
-				<div className={classes.not_suitable}>
+				<div className={`${classes.not_suitable} ml_5 mb_10`}>
 					<h4>Matches</h4>
-					<p>Entrees</p>
+					<p className='ml_5 mb_10'>Entrees</p>
 					<div className={classes.menu}>
 						<MenuCard />
 						<MenuCard />

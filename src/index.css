@@ -43,6 +43,7 @@
 	align-items: center;
 	font-size: 18px;
 	font-weight: 500;
+	margin-bottom: 0;
 }
 
 /* UTILITY CLASSES */
@@ -105,6 +106,15 @@
 	margin-top: 0px;
 	height: 0px;
 }
+/* MARGIN AND PADDING */
+
+.mb_10 {
+	margin-bottom: 10px;
+}
+.ml_5 {
+	margin-left: 5px;
+}
+
 /* CSS imported from BOOTSTRAP */
 
 .container {

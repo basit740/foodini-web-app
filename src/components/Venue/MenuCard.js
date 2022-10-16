@@ -4,7 +4,7 @@ import menu1 from '../../assets/venue/menu1.png';
 const MenuCard = () => {
 	return (
 		<div className={classes.menu_card}>
-			<img src={menu1} alt='' />
+			<img className={classes.menu_img} src={menu1} alt='' />
 			<div className={classes.menu_info}>
 				<div className={classes.heading}>
 					<h6>North Share Plate</h6>
@@ -12,7 +12,7 @@ const MenuCard = () => {
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
 						fill='currentColor'
-						class='w-6 h-6'
+						className={classes.icon_green_tick}
 					>
 						<path
 							fill-rule='evenodd'
