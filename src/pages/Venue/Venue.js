@@ -5,7 +5,7 @@ import { Outlet, useNavigate, useParams } from 'react-router-dom';
 const Venue = () => {
 	const navigate = useNavigate();
 	const { id } = useParams();
-	alert(id);
+
 	useEffect(() => {
 		if (localStorage.getItem('dtpf') === null) {
 			navigate('/dietary_preferences');

@@ -8,7 +8,7 @@ const Navbar = () => {
 			<div className={`${classes['navbar-container']} container`}>
 				<div className={`${classes['menu-and-logo']}`}>
 					<Hamburger />
-					<div className={`${classes['logo']}`}>
+					<div className={classes.logo}>
 						<img src={logo} alt='brand logo' />
 					</div>
 				</div>

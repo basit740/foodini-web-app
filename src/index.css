@@ -168,6 +168,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #f4f6f8;
+	overflow: auto;
+	overflow-x: hidden !important;
 }
 
 code {

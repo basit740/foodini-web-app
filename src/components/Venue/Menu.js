@@ -20,11 +20,24 @@ const actions = [
 	{ id: 1, actionImg: website, actionText: 'Website' },
 	{ id: 1, actionImg: order, actionText: 'Order' },
 ];
-const Menu = () => {
+const Menu = ({ id }) => {
 	return (
 		<div className={`${classes.menu_container} container-fluid`}>
 			<div className={classes.info_bar}>
 				<div className={`${classes.info_bar_content} container`}>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						className={classes.icon_backward}
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M15.75 19.5L8.25 12l7.5-7.5'
+						/>
+					</svg>
 					<button className={classes.back_btn}> Back</button>
 					<p>
 						This restaurant has been reviewed by an Accredited Practicing
@@ -78,7 +91,7 @@ const Menu = () => {
 								className={({ isActive }) =>
 									isActive ? `${classes.active_link}` : 'inactive'
 								}
-								to='/venue'
+								to='/venue/3434'
 							>
 								Menu
 							</NavLink>
@@ -158,6 +171,8 @@ const Menu = () => {
 						<MenuCard />
 					</div>
 				</div>
+
+				{/* <Outlet /> */}
 			</div>
 		</div>
 	);

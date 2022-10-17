@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Venue from './pages/Venue/Venue';
 import Reviews from './components/Venue/Reviews';
+// import MoreInfo from './components/Venue/MoreInfo';
 import Menu from './components/Venue/Menu';
 function App() {
 	return (

@@ -17,6 +17,7 @@
 .menu_container {
 	padding: 0;
 	margin: 0;
+	overflow-x: hidden !important;
 }
 .menu_container span {
 	display: inline;
@@ -32,20 +33,7 @@
 	gap: 16px;
 }
 
-@media (max-width: 768px) {
-	.container {
-		width: 750px;
-	}
-	.menu {
-		justify-content: center;
-		grid-template-columns: 300px 300px;
-	}
-}
-
 @media (min-width: 1700px) {
-	.container {
-		width: 750px;
-	}
 	.menu {
 		/* justify-content: center; */
 		grid-template-columns: 300px 300px 300px 300px 300px 300px;
@@ -62,7 +50,7 @@
 	display: flex;
 	align-items: center;
 }
-.info_bar_content button {
+.back_btn {
 	/* background-color: red; */
 	background-color: inherit;
 	border: none;
@@ -73,7 +61,14 @@
 	font-size: 16px;
 	cursor: pointer;
 }
-.info_bar_content p {
+
+.icon_backward {
+	width: 24px;
+	height: 24px;
+	stroke: white;
+	cursor: pointer;
+}
+.info_bar_content > p {
 	width: 700px;
 	margin: 0 auto;
 	color: white;
@@ -83,7 +78,7 @@
 .restaurant_banner {
 	width: 100%;
 }
-.restaurant_banner img {
+.restaurant_banner > img {
 	width: 100%;
 	height: 180px;
 }
@@ -205,4 +200,90 @@ p {
 .not_suitable > p {
 	color: #495057;
 	font-weight: 500;
+}
+
+/* // For Mobile Screen  */
+
+@media (max-width: 600px) {
+	/* info bar */
+
+	.back_btn {
+		display: none;
+	}
+	.info_bar {
+		overflow-x: hidden;
+		width: 100%;
+	}
+	.info_bar_content {
+		display: flex;
+		gap: 8px;
+	}
+	.info_bar_content > p {
+		width: 700px;
+		margin: 0 auto;
+		color: white;
+		font-size: 9px;
+	}
+
+	.restaurant_banner > img {
+		width: 100%;
+		height: 160px;
+	}
+
+	.restaurant_info {
+		border: 1px solid gainsboro;
+		border-top: none;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+	.restaurant_info_content {
+		display: flex;
+		/* justify-content: space-between; */
+		/* align-items: center; */
+		align-items: flex-start;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.restaurant_info_text h3 {
+		font-size: 14px;
+	}
+	.resaurant_info_actions {
+		text-align: center;
+		/* width: 300px; */
+		align-items: center;
+		align-self: center;
+	}
+
+	.venue_nav_bar_content {
+		padding-top: 5px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.nav {
+		display: flex;
+
+		justify-content: space-between;
+		align-self: stretch;
+	}
+
+	.filters {
+		display: flex;
+		justify-content: space-between;
+		align-self: stretch;
+	}
+
+	.menu {
+		/* justify-content: center; */
+		/* grid-template-columns: 300px; */
+		display: block;
+	}
+
+	.container {
+		width: 100%;
+	}
 }
