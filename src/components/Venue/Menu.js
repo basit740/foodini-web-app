@@ -26,9 +26,11 @@ const Menu = ({ id }) => {
 	const [showDetail, setShowDetail] = useState(false);
 	const detailHandler = () => {
 		setShowDetail(true);
+		document.querySelector('body').style.overflow = 'hidden';
 	};
 	const closeHandler = () => {
 		setShowDetail(false);
+		document.querySelector('body').style.overflow = 'auto';
 	};
 	return (
 		<div className={`${classes.menu_container} container-fluid`}>
