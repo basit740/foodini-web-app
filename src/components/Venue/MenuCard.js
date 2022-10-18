@@ -1,9 +1,12 @@
 import React from 'react';
 import classes from '../../styles/menucard.module.css';
 import menu1 from '../../assets/venue/menu1.png';
-const MenuCard = () => {
+const MenuCard = ({ onClick }) => {
+	const menuClickHandler = (e) => {
+		onClick();
+	};
 	return (
-		<div className={classes.menu_card}>
+		<div className={classes.menu_card} onClick={menuClickHandler}>
 			<img className={classes.menu_img} src={menu1} alt='' />
 			<div className={classes.menu_info}>
 				<div className={classes.heading}>

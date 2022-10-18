@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuCard from './MenuCard';
 import classes from '../../styles/menu.module.css';
 import banner from '../../assets/venue/banner.png';
@@ -13,6 +13,7 @@ import order from '../../assets/venue/actions/order.png';
 import RestaurantAction from './RestaurantAction';
 
 import { NavLink } from 'react-router-dom';
+import MenuDetail from '../MenuDetails/MenuDetail';
 
 const actions = [
 	{ id: 1, actionImg: phone, actionText: 'Call' },
@@ -20,9 +21,18 @@ const actions = [
 	{ id: 1, actionImg: website, actionText: 'Website' },
 	{ id: 1, actionImg: order, actionText: 'Order' },
 ];
+
 const Menu = ({ id }) => {
+	const [showDetail, setShowDetail] = useState(false);
+	const detailHandler = () => {
+		setShowDetail(true);
+	};
+	const closeHandler = () => {
+		setShowDetail(false);
+	};
 	return (
 		<div className={`${classes.menu_container} container-fluid`}>
+			<MenuDetail showDetail={showDetail} onClose={closeHandler} />
 			<div className={classes.info_bar}>
 				<div className={`${classes.info_bar_content} container`}>
 					<svg
@@ -135,10 +145,11 @@ const Menu = ({ id }) => {
 					<h4>Matches</h4>
 					<p className='ml_5 mb_10'>Breakfast</p>
 					<div className={`${classes.menu} ml_5 mb_10`}>
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
 					</div>
 				</div>
 
@@ -146,14 +157,14 @@ const Menu = ({ id }) => {
 					<h4>Matches</h4>
 					<p className='ml_5 mb_10'>Entrees</p>
 					<div className={`${classes.menu} ml_5 mb_10`}>
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
 					</div>
 				</div>
 
@@ -161,14 +172,14 @@ const Menu = ({ id }) => {
 					<h4>Matches</h4>
 					<p className='ml_5 mb_10'>Entrees</p>
 					<div className={classes.menu}>
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
-						<MenuCard />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
+						<MenuCard onClick={detailHandler} />
 					</div>
 				</div>
 

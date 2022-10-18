@@ -19,9 +19,7 @@
 	margin: 0;
 	overflow-x: hidden !important;
 }
-.menu_container span {
-	display: inline;
-}
+
 .menu {
 	display: grid;
 	/* grid-template-columns: 300px 300px 300px 300px; */
