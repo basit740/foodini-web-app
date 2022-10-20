@@ -6,6 +6,7 @@ import Venue from './pages/Venue/Venue';
 import Reviews from './components/Venue/Reviews';
 // import MoreInfo from './components/Venue/MoreInfo';
 import Menu from './components/Venue/Menu';
+// import Landing from './pages/landing/Index.js';
 function App() {
 	return (
 		<BrowserRouter>
