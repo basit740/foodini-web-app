@@ -1,0 +1,37 @@
+/* // GET MOBILE APPS COMPONENT */
+
+.get_mobile_apps {
+	margin-top: 7.5rem;
+}
+.apps_icon_container {
+	margin-top: 16px;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.app_icon {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #000;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+.app_icon__apple {
+	/* width: 8.75rem; */
+	width: 8.125rem;
+}
+.app_icon__android {
+	width: 9.375rem;
+}
+.list {
+	list-style: none;
+}
+.list > li {
+	font-size: 18px;
+}
+.list > li:first-child {
+	font-size: 10px;
+	font-weight: lighter;
+}

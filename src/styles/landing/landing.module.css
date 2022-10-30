@@ -37,6 +37,7 @@
 .search_box_container {
 	display: flex;
 	align-items: center;
+	margin-top: 1.25rem;
 }
 
 .search_box {
@@ -92,6 +93,7 @@
 .restaurant_cuisine_icon {
 }
 .txt_restaurant_cuisine {
+	padding-right: 100px;
 }
 
 .location_icon,
@@ -121,6 +123,14 @@
 	font-size: 14px;
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+.sign_in_guide {
+	margin-top: 1rem;
+	display: inline-block;
+	/* text-decoration: underline; */
+	cursor: pointer;
+	border-bottom: 1.5px solid gray;
 }
 
 /* // Restarant Search Box open state  */

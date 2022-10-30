@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import classes from '../../styles/landing/landing.module.css';
 
-import locationIcon from '../../assets/landing/location.png';
+// import locationIcon from '../../assets/landing/location.png';
 
 import searchIcon from '../../assets/landing/search-icon.png';
 
 import RestaurntInput from './RestaurntInput';
+import LocationInput from './LocationInput';
+import GetMobileApps from './GetMobileApps';
 
 const Landing = () => {
 	const [locationFocus, setLocationFocus] = useState(false);
 	const [locationSearchComplete, setLocationSearchComplete] = useState(false);
 	const [restaurantOn, setRestaurantOn] = useState(false);
-
-	// reference to both inputs
 
 	const locationFocusHandler = () => {
 		setLocationFocus(true);
@@ -44,19 +44,10 @@ const Landing = () => {
 								locationFocus === true ? classes.location_focus : ''
 							}`}
 						>
-							<div className={`${classes.location}`}>
-								<div className={`${classes.location_icon}`}>
-									<img src={locationIcon} alt='location icon' />{' '}
-									<span>Location</span>
-								</div>
-								<input
-									type='text'
-									className={classes.txt_search}
-									placeholder='Enter location to start exploring'
-									onFocus={locationFocusHandler}
-									onBlur={locationBlurHandler}
-								/>
-							</div>
+							<LocationInput
+								onFocus={locationFocusHandler}
+								onBlur={locationBlurHandler}
+							/>
 
 							<RestaurntInput />
 							<div className={classes.search_icon}>
@@ -73,6 +64,9 @@ const Landing = () => {
 							</p>
 						)}
 					</div>
+
+					<p className={classes.sign_in_guide}>Sign in for saved food prefer</p>
+					<GetMobileApps />
 				</div>
 			</div>
 		</div>
