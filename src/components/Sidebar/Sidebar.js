@@ -7,10 +7,12 @@ import info from '../../assets/sidebar/info.png';
 import explore from '../../assets/sidebar/explore.png';
 
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { close } from '../../store/reducers/sidebarSlice';
 
 const Sidebar = () => {
+	const auth = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	const disable = (e) => {
 		e.stopPropagation();
@@ -19,37 +21,46 @@ const Sidebar = () => {
 		<div className={classes.sidebar} onClick={() => dispatch(close())}>
 			<div className={classes.sidbar_content} onClick={disable}>
 				<div className={classes.user_section}>
-					<div className={classes.user}>
-						<img src={userPlaceholder} alt='user card' />
-						<div className={classes.name_and_view_account}>
-							<h3>Alex</h3>
-							<Link to='/user_profile'>View Account</Link>
+					{auth.user === null && (
+						<div className={classes.user}>
+							<img src={userPlaceholder} alt='user card' />
+							<div className={classes.name_and_view_account}>
+								<h3>Alex</h3>
+								<Link to='/user_profile'>View Account</Link>
+							</div>
 						</div>
-					</div>
-
+					)}
+					{auth.user !== null && (
+						<div className={classes.register_signin}>
+							<button className={classes.btn_register}>Register</button>
+							<button className={classes.btn_signin}>Sign In</button>
+						</div>
+					)}
 					<ul className={classes.actions}>
-						<li>
-							<Link>
-								{' '}
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='15.48'
-									height='15.5'
-									viewBox='42.75 147.75 15.48 15.5'
-								>
-									<path
-										d='M45.48 164h3m3 0h-3m0 0v-5m8 5v-8s2.5-1 2.5-3v-4.5m-2.5 4v-4m-12.5 6.5c1 2.128 4.5 4 4.5 4s3.5-1.872 4.5-4c1.08-2.297 0-6.5 0-6.5h-9s-1.08 4.203 0 6.5Z'
-										stroke-linejoin='round'
-										stroke-linecap='round'
-										stroke-width='1.5'
-										stroke='#000'
-										fill='transparent'
-										data-name='clutery (1)'
-									/>
-								</svg>
-								<p>Eating Preferences</p>
-							</Link>
-						</li>
+						{auth.user === null && (
+							<li>
+								<Link>
+									{' '}
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										width='15.48'
+										height='15.5'
+										viewBox='42.75 147.75 15.48 15.5'
+									>
+										<path
+											d='M45.48 164h3m3 0h-3m0 0v-5m8 5v-8s2.5-1 2.5-3v-4.5m-2.5 4v-4m-12.5 6.5c1 2.128 4.5 4 4.5 4s3.5-1.872 4.5-4c1.08-2.297 0-6.5 0-6.5h-9s-1.08 4.203 0 6.5Z'
+											stroke-linejoin='round'
+											stroke-linecap='round'
+											stroke-width='1.5'
+											stroke='#000'
+											fill='transparent'
+											data-name='clutery (1)'
+										/>
+									</svg>
+									<p>Eating Preferences</p>
+								</Link>
+							</li>
+						)}
 						<li>
 							<Link>
 								<img src={explore} alt='explore more' />
@@ -64,9 +75,11 @@ const Sidebar = () => {
 							</Link>
 						</li>
 
-						<li className={classes.signout}>
-							<Link to='/signout'>Sign Out</Link>
-						</li>
+						{auth.user === null && (
+							<li className={classes.signout}>
+								<Link to='/signout'>Sign Out</Link>
+							</li>
+						)}
 					</ul>
 				</div>
 				<div className={classes.brand_section}>

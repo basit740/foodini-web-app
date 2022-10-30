@@ -12,6 +12,8 @@
       NAVBAR COLOR #f4f6f8
       BORDER COLOR #adb5bd
       HALF-MUTED COLOR #495057;
+			
+			TEXT-COLOR #465C72;
 			#f2f2f8
       */
 
@@ -23,8 +25,10 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 30%);
+
 	overflow-y: hidden;
+	z-index: 100;
 }
 .sidbar_content {
 	width: 327px;
@@ -38,7 +42,7 @@
 /* USER SECTION */
 .user_section,
 .brand_section {
-	padding: 50px 60px 0px 40px;
+	padding: 50px 60px 40px 40px;
 	border-bottom: 1.5px solid #adb5bd;
 }
 .user {
@@ -87,13 +91,42 @@ svg {
 }
 
 .signout {
-	margin-top: 30px;
-	margin-bottom: 20px;
+	/* margin-top: 30px; */
+	/* margin-bottom: 20px; */
 }
 .signout > a:link,
 a:visited {
 	font-weight: 450;
 	letter-spacing: 1.2;
+}
+
+/* // USER SECTION WITHOUT LOGIN */
+
+.register_signin {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.register_signin > button {
+	width: 100%;
+
+	border-radius: 5px;
+	padding: 15px 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.btn_register {
+	background-color: #43b772;
+	color: #fff;
+	border: none;
+}
+.btn_register:hover {
+	background-color: #26d07c;
+}
+.btn_signin {
+	background-color: transparent;
+	border: 1px solid #cdd8e3;
+	color: #465c72;
 }
 
 /* BRAND SECTION */

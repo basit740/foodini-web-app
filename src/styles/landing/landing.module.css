@@ -1,0 +1,168 @@
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/* 
+      MAIN COLOR: #26d07c
+      GREY COLOR: #343a40
+      TEXT COLOR #465c72
+      NAVBAR COLOR #f4f6f8
+      BORDER COLOR #adb5bd
+			PLACEHOLDER COLOR: #C6CDD4;
+
+			SMALL_LABEL_COLOR: 
+			
+*/
+
+.landing {
+	width: 100%;
+	height: 100vh;
+	background: url('../../assets/landing/landing.png');
+	background-size: cover;
+}
+
+.content {
+	padding-top: 170px;
+	margin-bottom: 1.375rem;
+	width: 48.75rem;
+}
+.main_heading {
+}
+.main_heading > h1 {
+	font-size: 3.125rem;
+}
+
+.search_box_container {
+	display: flex;
+	align-items: center;
+}
+
+.search_box {
+	display: flex;
+	align-items: center;
+	width: 65%;
+	border: 1px solid #cdd8e3;
+	padding: 5px 10px 10px 30px;
+	border-radius: 100px;
+	position: relative;
+	background-color: #fff;
+}
+
+.location {
+	/* background-color: green; */
+
+	padding-right: 2.1875rem;
+	/* width: 45%; */
+	width: 100%;
+}
+
+.location.restaurant {
+	width: 100%;
+}
+.location_icon {
+}
+.location_icon > span,
+.restaurant_cuisine_icon > span {
+	color: #6b6e8e;
+}
+.txt_search {
+	padding-right: 30px;
+}
+.txt_search::placeholder {
+	color: #c6cdd4;
+}
+.location > input,
+.restaurant_cuisine > input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	width: 100%;
+	font-size: 18px;
+}
+.restaurant_cuisine {
+	/* background-color: blue; */
+	width: 55%;
+	padding-left: 2.1875rem;
+	border-left: 1px solid #cdd8e3;
+
+	display: none;
+}
+.restaurant_cuisine_icon {
+}
+.txt_restaurant_cuisine {
+}
+
+.location_icon,
+.restaurant_cuisine_icon {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #adb5bd;
+	margin-bottom: 5px;
+}
+.restaurant_cuisine_icon > span {
+	font-size: 14px;
+}
+.restaurant_cuisine_icon > img {
+	width: 13px;
+}
+.search_icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.add_restaurant {
+	margin-left: 32px;
+	width: 28%;
+	font-size: 14px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* // Restarant Search Box open state  */
+
+.restaurant_on .search_box {
+	width: 95%;
+}
+
+.restaurant_on .restaurant_cuisine {
+	display: block;
+}
+
+.restaurant_on .location {
+	width: 45%;
+	padding-right: 30px;
+}
+
+/* // LOCATION INPUT FOCUS STATE */
+
+/* .location_focus.location_icon > img {
+	size: 1.25rem;
+}
+.location_focus.location_icon > span {
+
+} */
+
+.search_box.location_focus {
+	height: 4.375rem;
+}
+.search_box.location_focus .location_icon > span {
+	font-size: 14px;
+}
+.search_box.location_focus .location_icon > img {
+	width: 13px;
+}
+
+/* // location search complete state */
+
+.location_completed {
+}
+
+.location_completed .add_restaurant {
+	/* margin-right: 32px; */
+	display: block;
+}
