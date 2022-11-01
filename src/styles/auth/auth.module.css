@@ -1,0 +1,221 @@
+/* COLOR OF THIS COMPONENT #7a879e;   */
+/* MAIN COLOR #43b772 */
+/* LIGHTER SHADE # #43b771ee*/
+
+.auth {
+	background-color: #fff;
+
+	/* height: -webkit-calc(100vh - 76px);
+	height: -moz-calc(100vh - 76px); */
+	height: calc(100vh - 76.5px);
+	display: flex;
+}
+
+.text_area {
+	width: 43%;
+}
+.text_area_content {
+	width: 23.125rem;
+	margin: 0 auto;
+}
+.heading {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+.social_logins {
+	text-align: center;
+	margin-bottom: 1.1875rem;
+}
+.google_login,
+.facebook_login {
+	width: 2.25rem;
+	height: 2.25rem;
+	cursor: pointer;
+}
+.google_login {
+	margin-right: 1rem;
+}
+.facebook_login {
+}
+
+.or_bar_section {
+	/* display: flex; */
+}
+.or {
+	display: flex;
+	flex-direction: row;
+	color: #7a879e;
+	margin-bottom: 1.5625rem;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+.or:before,
+.or:after {
+	content: '';
+	flex: 1 1;
+	border-bottom: 1px solid;
+	margin: auto;
+	color: #c9c9c9;
+}
+.or:before {
+	margin-right: 10px;
+}
+.or::after {
+	margin-left: 10px;
+}
+
+.form_section {
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+	gap: 16px;
+	color: #7a879e;
+}
+
+.input_group {
+}
+.input_group > label {
+	display: block;
+	margin-bottom: 2px;
+}
+.input_group > input {
+	border-radius: 100px;
+	padding: 7px 25px;
+	background-color: transparent;
+	border: 1px solid #cdd8e3;
+	width: 100%;
+}
+.full_name {
+}
+.email {
+}
+
+.password_box {
+	display: flex;
+	align-items: center;
+	padding: 7px 15px;
+	border-radius: 100px;
+	border: 1px solid #cdd8e3;
+	position: relative;
+}
+.password_box > input {
+	border: none;
+	outline: none;
+	width: 100%;
+	padding-right: 25px;
+}
+.eye_container {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	cursor: pointer;
+	transform: translate(0, -50%);
+}
+
+.eye_content {
+	position: relative;
+	/* background-color: rgb(247, 243, 243); */
+}
+.eye_content > img {
+	width: 1.125rem;
+	height: 0.75rem;
+}
+.eye_container.open .eye_content:before {
+	position: absolute;
+	content: '/';
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.password {
+}
+.confirm_password {
+}
+.actions {
+	margin-top: 15px;
+}
+.actions > a {
+	display: inline;
+}
+
+.btn_register {
+	background-color: #43b772;
+	color: #fff;
+	padding: 12px 25px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.btn_register:hover {
+	background-color: #43b771ee;
+}
+.btn_register.disabled {
+}
+.helping_text {
+	text-align: center;
+}
+.helping_text > a {
+	text-decoration: none;
+	border-bottom: 1px solid #cdd8e3;
+	color: #000;
+	font-weight: 500;
+}
+
+/* // sign in component */
+.forgot_password_help {
+	font-weight: bold;
+	color: #43b772;
+	opacity: 0.7;
+	font-weight: 550;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.terms_of_use {
+	margin-top: 1rem;
+	text-align: center;
+
+	font-weight: 500;
+	cursor: pointer;
+	color: #000;
+	font-size: 0.875rem;
+}
+.terms_of_use > span {
+	border-bottom: 1px solid gray;
+}
+
+/* // FORGOT PASSWORD COMPONENT */
+
+.forgot_password {
+	width: 410px;
+	margin: 0 auto;
+	color: #7a879e;
+}
+.forgot_password_content {
+	padding: 0 20px;
+}
+.forgot_password_heading {
+	margin-top: 8.5625rem;
+	text-align: center;
+	font-size: 2.25rem;
+	margin-bottom: 1.25rem;
+	color: #000;
+}
+
+.password_reset_link {
+	margin-bottom: 1.8125rem;
+	font-weight: 500;
+	text-align: center;
+}
+.banner_area {
+	width: 57%;
+	background: url('../../assets//auth/healthy-food.png');
+}

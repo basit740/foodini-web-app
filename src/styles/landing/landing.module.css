@@ -21,6 +21,8 @@
 	height: 100vh;
 	background: url('../../assets/landing/landing.png');
 	background-size: cover;
+	margin-top: 3px;
+	overflow-y: hidden;
 }
 
 .content {
@@ -131,6 +133,7 @@
 	/* text-decoration: underline; */
 	cursor: pointer;
 	border-bottom: 1.5px solid gray;
+	font-weight: 500;
 }
 
 /* // Restarant Search Box open state  */

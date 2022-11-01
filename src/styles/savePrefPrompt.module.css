@@ -1,0 +1,68 @@
+.save_pref_prompt {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.content {
+	width: 42.625rem;
+	margin: 8.75rem auto;
+	border-radius: 0.625rem;
+	background-color: #fff;
+}
+.heading {
+	padding-top: 1.875rem;
+	text-align: center;
+	font-weight: 550;
+	margin-bottom: 1.5625rem;
+}
+.description {
+	text-align: center;
+	margin-bottom: 1.5625rem;
+	padding: 0 30px;
+	font-weight: 500;
+}
+.helping_text,
+.helping_text_2 {
+	background-color: #f8f9fa;
+	padding: 10px 35px;
+	font-size: 12px;
+}
+.helping_text_2 {
+	padding-top: 0px;
+	margin-bottom: 1.25rem;
+}
+
+.actions {
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 2.1875rem;
+}
+.btn_agree {
+	/* display: block; */
+	display: block;
+	margin: 0 auto;
+	background-color: #43b772;
+	color: #fff;
+	padding: 15px 40px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+
+	font-size: 1.125rem;
+	margin-bottom: 2.5rem;
+}
+.btn_disagree {
+	display: block;
+	margin: 0 auto;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid gray;
+	font-weight: bold;
+	cursor: pointer;
+}

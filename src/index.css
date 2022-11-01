@@ -170,6 +170,7 @@ body {
 	background-color: #f4f6f8;
 	overflow: auto;
 	overflow-x: hidden !important;
+	/* height: 100vh; */
 }
 
 code {

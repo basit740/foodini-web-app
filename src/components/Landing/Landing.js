@@ -9,10 +9,15 @@ import RestaurntInput from './RestaurntInput';
 import LocationInput from './LocationInput';
 import GetMobileApps from './GetMobileApps';
 
+// React Router
+import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
 	const [locationFocus, setLocationFocus] = useState(false);
 	const [locationSearchComplete, setLocationSearchComplete] = useState(false);
 	const [restaurantOn, setRestaurantOn] = useState(false);
+
+	const navigate = useNavigate();
 
 	const locationFocusHandler = () => {
 		setLocationFocus(true);
@@ -26,6 +31,10 @@ const Landing = () => {
 	const addRestaurantHandler = (e) => {
 		setRestaurantOn(true);
 		setLocationSearchComplete(false);
+	};
+
+	const searchHandler = (e) => {
+		navigate('/venue/64564');
 	};
 	return (
 		<div className={classes.landing}>
@@ -50,7 +59,7 @@ const Landing = () => {
 							/>
 
 							<RestaurntInput />
-							<div className={classes.search_icon}>
+							<div className={classes.search_icon} onClick={searchHandler}>
 								<img src={searchIcon} alt='search' />
 							</div>
 						</div>
@@ -65,7 +74,9 @@ const Landing = () => {
 						)}
 					</div>
 
-					<p className={classes.sign_in_guide}>Sign in for saved food prefer</p>
+					<p className={classes.sign_in_guide}>
+						Sign in for saved food preferences
+					</p>
 					<GetMobileApps />
 				</div>
 			</div>

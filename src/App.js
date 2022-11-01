@@ -7,6 +7,8 @@ import Reviews from './components/Venue/Reviews';
 // import MoreInfo from './components/Venue/MoreInfo';
 import Menu from './components/Venue/Menu';
 import Landing from './components/Landing/Landing';
+
+import Auth from './pages/auth/Index';
 // import Landing from './pages/landing/Index.js';
 function App() {
 	return (
@@ -14,6 +16,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route path='' element={<Landing />} />
+					<Route path='auth' element={<Auth />} />
 					<Route path='dietary_preferences' element={<DietaryPref />} />
 					<Route path='venue/:id' element={<Venue />}>
 						<Route index element={<Menu />} />
