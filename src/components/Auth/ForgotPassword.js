@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from '../../styles/auth/auth.module.css';
 import InputBox from './InputBox';
-const ForgotPassword = ({ onSignInShow }) => {
+const ForgotPassword = ({ onSignInShow, onSend }) => {
 	return (
 		<div className={classes.forgot_password}>
 			<h2 className={classes.forgot_password_heading}>Resest your password</h2>
@@ -17,8 +17,13 @@ const ForgotPassword = ({ onSignInShow }) => {
 					boxClassName={classes.input_group}
 				/>
 				<div className={classes.actions}>
-					<button className={`${classes.btn_register} ${classes.disabled}`}>
-						Register
+					<button
+						className={`${classes.btn_register} ${classes.disabled}`}
+						onClick={(e) => {
+							onSend();
+						}}
+					>
+						Send
 					</button>
 					<p className={classes.helping_text}>
 						Remember your password?

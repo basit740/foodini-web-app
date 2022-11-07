@@ -2,6 +2,10 @@
 /* MAIN COLOR #43b772 */
 /* LIGHTER SHADE # #43b771ee*/
 
+/*******************************/
+/* AUTH FORM*/
+/*******************************/
+
 .auth {
 	background-color: #fff;
 
@@ -215,7 +219,18 @@
 	font-weight: 500;
 	text-align: center;
 }
+
+/*******************************/
+/* BANNER AREA */
+/*******************************/
+
 .banner_area {
 	width: 57%;
 	background: url('../../assets//auth/healthy-food.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
+/*******************************/
+/* MOBILE RESPONSIVE */
+/*******************************/

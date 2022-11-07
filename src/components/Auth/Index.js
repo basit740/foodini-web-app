@@ -20,7 +20,7 @@ const Index = () => {
 		setShowForgotPassword(false);
 	};
 	return (
-		<div className={classes.auth}>
+		<div className={`${classes.auth}`}>
 			<div className={classes.text_area}>
 				<div className={classes.text_area_content}>
 					{!showForgotPassword && (
